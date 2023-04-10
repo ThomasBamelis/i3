@@ -238,3 +238,7 @@ assign [class="firefox"] $wsbrowser
 
 # startup apps
 #exec --no-startup-id firefox
+
+# Set background
+# install nitrogen for this
+exec --no-startup-id nitrogen --set-auto /home/tbamelis/Pictures/himalayan.jpg --head=0 && nitrogen --set-auto /home/tbamelis/Pictures/nice_night.jpg --head=1
