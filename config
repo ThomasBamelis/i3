@@ -202,6 +202,7 @@ bar {
     urgent_workspace   #EC69A0 #DB3279 #FFFFFF
     binding_mode       #b691d3 #A07CBC #FFFFFF
   }
+  tray_output primary
   #i3bar_command /home/tbamelis/.config/i3/statusbar
   status_command i3status --config ~/.config/i3/statusbar
   #status_command i3status
