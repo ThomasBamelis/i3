@@ -122,10 +122,10 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
+#bindsym $mod+1 workspace number $ws1
+#bindsym $mod+2 workspace number $ws2
+#bindsym $mod+3 workspace number $ws3
+#bindsym $mod+4 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
@@ -204,3 +204,37 @@ bar {
   }
   status_command i3status
 }
+
+# Set screen names
+set $primary_monitor DP-2
+set $right_monitor DP-1-1
+
+# Set screens. Check available ones with xrandr
+exec --no-startup-id xrandr --output $right_monitor --auto --right-of $primary_monitor
+
+# Set dpi for screens
+# Add Xft.dpi: 180 to ~/.Xresources for 4k screens
+# xrandr --dpi does not seem to work...
+exec --no-startup-id xrandr --output $primary_monitor --mode 3840x2160 --pos 0x0 --rotate normal --primary --output $right_monitor --mode 3840x2160 --pos 3840x720 --rotate normal
+
+# name workspaces
+set $wsmain "1: main"
+set $wstmp "2: tmp"
+set $wssec "3: secondary"
+set $wsbrowser "4: browser"
+bindsym $mod+1 workspace $wsmain
+bindsym $mod+2 workspace $wstmp
+bindsym $mod+3 workspace $wssec
+bindsym $mod+4 workspace $wsbrowser
+
+# Assign to monitors
+workspace $wsmain output $primary_monitor
+workspace $wstmp output $primary_monitor
+workspace $wssec output $right_monitor
+workspace $wsbrowser output $right_monitor
+
+# startup apps on specific monitors
+assign [class="firefox"] $wsbrowser
+
+# startup apps
+#exec --no-startup-id firefox
