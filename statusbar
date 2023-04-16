@@ -79,6 +79,8 @@ cpu_usage {
 
 cpu_temperature 0 {
 	format = " %degrees°C"
+  # path: "/sys/class/thermal/thermal_zone1/temp"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
 }
 
 disk "/" {

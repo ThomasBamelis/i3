@@ -242,6 +242,7 @@ assign [class="firefox"] $wsbrowser
 
 # startup apps
 #exec --no-startup-id firefox
+exec --no-startup-id unlock_keepassxc
 
 # Set background
 # install nitrogen for this
