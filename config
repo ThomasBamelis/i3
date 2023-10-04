@@ -134,10 +134,10 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
+# bindsym $mod+Shift+1 move container to workspace number $ws1
+# bindsym $mod+Shift+2 move container to workspace number $ws2
+# bindsym $mod+Shift+3 move container to workspace number $ws3
+# bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
@@ -212,8 +212,8 @@ client.background       #FFFFFF
 
 
 # Set screen names
-set $primary_monitor DP-2
-set $right_monitor DP-1-1
+set $primary_monitor DP-0
+set $right_monitor DP-2
 
 # Set screens. Check available ones with xrandr
 exec --no-startup-id xrandr --output $right_monitor --auto --right-of $primary_monitor
@@ -232,6 +232,10 @@ bindsym $mod+1 workspace $wsmain
 bindsym $mod+2 workspace $wstmp
 bindsym $mod+3 workspace $wssec
 bindsym $mod+4 workspace $wsbrowser
+bindsym $mod+Shift+1 move container to workspace number $wsmain
+bindsym $mod+Shift+2 move container to workspace number $wstmp
+bindsym $mod+Shift+3 move container to workspace number $wssec
+bindsym $mod+Shift+4 move container to workspace number $wsbrowser
 
 # Assign to monitors
 workspace $wsmain output $primary_monitor
